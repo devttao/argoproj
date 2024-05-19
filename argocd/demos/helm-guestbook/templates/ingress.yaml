@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-{{ template "helm-guestbook.name" . }}
+spec:
+  rules:
+    - host: {{ template "helm-guestbook.name" . }}.myapp.local
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: {{ template "helm-guestbook.fullname" . }}
+                port:
+                  number: 80
