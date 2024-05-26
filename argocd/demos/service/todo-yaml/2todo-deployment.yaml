@@ -45,8 +45,4 @@ spec:
         - containerPort: 8080
           name: "http"
           protocol: "TCP"
-        serviceAccount: "todo-gitops"
-        resources:
-          limits:
-            memory: 1Gi
-            cpu: "1"
+      serviceAccount: "todo-gitops"
