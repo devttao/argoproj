@@ -2,6 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nginx-ingress-todo
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
 spec:
   rules:
     - host: todo-yaml.myapp.local
