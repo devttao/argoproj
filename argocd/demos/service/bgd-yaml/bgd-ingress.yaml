@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress-bgd
+spec:
+  rules:
+    - host: bgd-yaml.myapp.local
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: bgd
+                port:
+                  number: 80
