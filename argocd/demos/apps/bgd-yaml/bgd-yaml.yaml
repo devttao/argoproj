@@ -1,8 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bgd-yaml
-  namespace: bgd-yaml
+  name: app-bgd-yaml
+  namespace: app-bgd-yaml
 spec:
   destination:
     namespace: bgd
