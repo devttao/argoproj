@@ -1,3 +1,4 @@
+# Source: https://github.com/redhat-scholars/argocd-tutorial/tree/master/documentation/modules/ROOT/examples/bgd-yaml
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -5,7 +6,6 @@ metadata:
   labels:
     app: bgd
   name: bgd
-  namespace: bgd
 spec:
   replicas: 1
   selector:
