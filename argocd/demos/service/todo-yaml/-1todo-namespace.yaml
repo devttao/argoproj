@@ -1,0 +1,8 @@
+# --> https://github.com/redhat-scholars/argocd-tutorial/tree/master/documentation/modules/ROOT/examples/todo-yaml
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: todo
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
