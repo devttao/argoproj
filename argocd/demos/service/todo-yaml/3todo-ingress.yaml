@@ -6,7 +6,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "3"
 spec:
   rules:
-    - host: todo-yaml.myapp.local
+    - host: todo-yaml.myapp.local # http://todo-yaml.myapp.local/todo.html
       http:
         paths:
           - pathType: Prefix
