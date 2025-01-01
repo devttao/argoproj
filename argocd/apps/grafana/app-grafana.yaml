@@ -1,0 +1,25 @@
+# Source: https://akuity.io/blog/argo-cd-build-environment-examples/
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana
+  namespace: argocd
+spec:
+  destination:
+    name: in-cluster
+    namespace: front-end
+  project: default
+  source:
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: 8.2.20
+    chart: grafana
+    helm:
+      parameters:
+        - name: 'ingress.hostname'
+          value: $ARGOCD_APP_NAME.myapp.local
+        - name: 'ingress.enabled'
+          value: 'true'
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
